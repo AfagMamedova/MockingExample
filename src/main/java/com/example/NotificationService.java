@@ -1,6 +1,11 @@
 package com.example;
 
-public interface NotificationService {
-    void sendBookingConfirmation(Booking booking) throws NotificationException;
-    void sendCancellationConfirmation(Booking booking) throws NotificationException;
+public class NotificationService {
+    public void sendBookingConfirmation(Booking booking) throws NotificationException {
+        // kod som kan kasta NotificationException
+    }
+
+    public void sendCancellationConfirmation(Booking booking) throws NotificationException {
+        // kod som kan kasta NotificationException
+    }
 }
