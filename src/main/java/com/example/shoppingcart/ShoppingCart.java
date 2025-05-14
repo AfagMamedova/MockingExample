@@ -13,4 +13,8 @@ public class ShoppingCart {
     public Map<Product, Integer> getItems() {
         return items;
     }
+    public void removeProduct(Product product) {
+        items.remove(product);
+    }
+
 }

@@ -14,4 +14,15 @@ public class ShoppingCartTest {
 
         assertThat(cart.getItems()).containsEntry(product, 1);
     }
+    @Test
+    void shouldRemoveProductFromCart() {
+        ShoppingCart cart = new ShoppingCart();
+        Product product = new Product("Banana", 5.0);
+
+        cart.addProduct(product, 2);
+        cart.removeProduct(product);
+
+        assertThat(cart.getItems()).doesNotContainKey(product);
+    }
+
 }
