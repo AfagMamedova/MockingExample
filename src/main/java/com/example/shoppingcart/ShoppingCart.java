@@ -31,4 +31,12 @@ public class ShoppingCart {
         }
         return total * (1 - discount); // stöd för rabatt
     }
+    public void updateQuantity(Product product, int newQuantity) {
+        if (newQuantity <= 0) {
+            items.remove(product);
+        } else {
+            items.put(product, newQuantity);
+        }
+    }
+
 }
