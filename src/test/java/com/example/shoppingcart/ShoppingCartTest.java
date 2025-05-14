@@ -24,5 +24,18 @@ public class ShoppingCartTest {
 
         assertThat(cart.getItems()).doesNotContainKey(product);
     }
+    @Test
+    void shouldCalculateTotalPrice() {
+        ShoppingCart cart = new ShoppingCart();
+        Product apple = new Product("Apple", 10.0);
+        Product banana = new Product("Banana", 5.0);
+
+        cart.addProduct(apple, 2);  // 2 x 10 = 20
+        cart.addProduct(banana, 3); // 3 x 5 = 15
+
+        double total = cart.getTotalPrice();
+
+        assertThat(total).isEqualTo(35.0);
+    }
 
 }
