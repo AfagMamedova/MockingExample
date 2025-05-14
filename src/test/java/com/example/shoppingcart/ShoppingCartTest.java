@@ -78,5 +78,15 @@ public class ShoppingCartTest {
 
         assertThat(cart.getItems()).containsEntry(apple, 5);
     }
+    @Test
+    void shouldRemoveProductWhenQuantityIsZero() {
+        ShoppingCart cart = new ShoppingCart();
+        Product apple = new Product("Apple", 10.0);
+        cart.addProduct(apple, 2);
+
+        cart.updateQuantity(apple, 0);
+
+        assertThat(cart.getItems()).doesNotContainKey(apple);
+    }
 
 }
