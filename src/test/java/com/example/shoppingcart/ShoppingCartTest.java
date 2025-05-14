@@ -68,4 +68,15 @@ public class ShoppingCartTest {
 
         assertThat(total).isEqualTo(35.0);
     }
+    @Test
+    void shouldUpdateQuantityOfExistingProduct() {
+        ShoppingCart cart = new ShoppingCart();
+        Product apple = new Product("Apple", 10.0);
+
+        cart.addProduct(apple, 2);
+        cart.updateQuantity(apple, 5); // ändra direkt till 5
+
+        assertThat(cart.getItems()).containsEntry(apple, 5);
+    }
+
 }
